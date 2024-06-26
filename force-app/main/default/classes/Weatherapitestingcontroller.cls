@@ -1,5 +1,18 @@
+/**
+ * @description       : 
+ * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+ * @group             : 
+ * @last modified on  : 06-26-2024
+ * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+**/
 public class Weatherapitestingcontroller {
 
+    /**
+    * @description 
+    * @author ChangeMeIn@UserSettingsUnder.SFDoc | 06-26-2024 
+    * @param CityName 
+    * @return Weatherwrapper 
+    **/
     @AuraEnabled
     Public static Weatherwrapper getweatherapidetails(String CityName)
     {
