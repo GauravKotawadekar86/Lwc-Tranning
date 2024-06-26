@@ -1,3 +1,10 @@
+/**
+ * @description       : 
+ * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+ * @group             : 
+ * @last modified on  : 06-26-2024
+ * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+**/
 import { LightningElement, wire } from 'lwc';
 import { CurrentPageReference } from 'lightning/navigation';
 import { registerListener, unregisterAllListeners, fireEvent } from 'c/pubsub';
@@ -11,7 +18,7 @@ export default class Weatherapitesting extends LightningElement {
 
     connectedCallback() {
         //this.cityName = 'London';
-        
+
         loadStyle(this, customStyles)
             .then(() => {
                 console.log('Styles loaded successfully');
@@ -34,7 +41,7 @@ export default class Weatherapitesting extends LightningElement {
     }
 
     handlePropertySelected(weatherDetails) {
-        console.log('handlePropertySelected(weatherDetails):'+JSON.stringify(weatherDetails));
+        console.log('handlePropertySelected(weatherDetails):' + JSON.stringify(weatherDetails));
         fireEvent(this.pageRef, 'gaurav_propertySelected', weatherDetails);//'a0DdL000005KjoTUAS');//);
     }
 
@@ -45,13 +52,16 @@ export default class Weatherapitesting extends LightningElement {
                 console.log('result' + JSON.stringify(result));
                 this.showweatherdetails = true;
                 this.weatherDtails = result;
+
                 console.log('result this.weatherDtails' + JSON.stringify(this.weatherDtails));
-                this.handlePropertySelected(this.weatherDtails);
+                if (this.weatherDtails && !this.weatherDtails.error) {
+                    this.handlePropertySelected(this.weatherDtails);
+                }
             })
-            .catch(error => {
-                this.showweatherdetails = false;
-                console.log('error' + JSON.stringify(error));
-            })
+                .catch(error => {
+                    this.showweatherdetails = false;
+                    console.log('error' + JSON.stringify(error));
+                })
         }
         else {
             this.showweatherdetails = false;

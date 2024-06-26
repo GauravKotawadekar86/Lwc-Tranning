@@ -1,13 +1,20 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 06-26-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
 <template>
 	<!--<div >class="customstyle" -->
 	<lightning-card title="Weather Details" icon-name="standard:invocable_action">
 		<div slot="actions">
 			<div style="min-height:64px">
-			<template lwc:if={showweatherdetails}>
-				<template if:false={weatherDtails.error}>
-					<b><I>{weatherDtails.iconstatus} : </I></b><img src={weatherDtails.icon} alt="weather icon" />
+				<template lwc:if={showweatherdetails}>
+					<template if:false={weatherDtails.error}>
+						<b><I>{weatherDtails.iconstatus} : </I></b><img src={weatherDtails.icon} alt="weather icon" />
 				</template>
-				</template>
+					</template>
 			</div>
 		</div>
 		<div>
@@ -32,67 +39,66 @@
 				</lightning-layout>
 			</div>
 			<!-- <div style="min-height:200px;"> -->
-				<template lwc:if={showweatherdetails}>
-					<template if:false={weatherDtails.error}>
-						<lightning-layout horizontal-align="spread" multiple-rows>
-							<lightning-layout-item size="6" padding="around-small">
-								<div><b><I>City :</I></b> {weatherDtails.cityname}</div>
-							</lightning-layout-item>
-							<lightning-layout-item size="6" padding="around-small">
-								<div><b><I>Region :</I></b> {weatherDtails.region}</div>
-							</lightning-layout-item>
-							<lightning-layout-item size="6" padding="around-small">
-								<div><b><I>Country :</I></b> {weatherDtails.country}</div>
-							</lightning-layout-item>
-							<lightning-layout-item size="6" padding="around-small">
-								<div><b><I>Latitude :</I></b> {weatherDtails.latitude}</div>
-							</lightning-layout-item>
-							<lightning-layout-item size="6" padding="around-small">
-								<div><b><I>Longitude :</I></b> {weatherDtails.longitude}</div>
-							</lightning-layout-item>
-							<lightning-layout-item size="6" padding="around-small">
-								<div><b><I>Timezone :</I></b> {weatherDtails.timezone}</div>
-							</lightning-layout-item>
-							<lightning-layout-item size="6" padding="around-small">
-								<div><b><I>Localtime : </I></b>{weatherDtails.localtime}
-								</div>
-							</lightning-layout-item>
+			<template lwc:if={showweatherdetails}>
+				<template if:false={weatherDtails.error}>
+					<lightning-layout horizontal-align="spread" multiple-rows>
+						<lightning-layout-item size="6" padding="around-small">
+							<div><b><I>City :</I></b> {weatherDtails.cityname}</div>
+						</lightning-layout-item>
+						<lightning-layout-item size="6" padding="around-small">
+							<div><b><I>Region :</I></b> {weatherDtails.region}</div>
+						</lightning-layout-item>
+						<lightning-layout-item size="6" padding="around-small">
+							<div><b><I>Country :</I></b> {weatherDtails.country}</div>
+						</lightning-layout-item>
+						<lightning-layout-item size="6" padding="around-small">
+							<div><b><I>Latitude :</I></b> {weatherDtails.latitude}</div>
+						</lightning-layout-item>
+						<lightning-layout-item size="6" padding="around-small">
+							<div><b><I>Longitude :</I></b> {weatherDtails.longitude}</div>
+						</lightning-layout-item>
+						<lightning-layout-item size="6" padding="around-small">
+							<div><b><I>Timezone :</I></b> {weatherDtails.timezone}</div>
+						</lightning-layout-item>
+						<lightning-layout-item size="6" padding="around-small">
+							<div><b><I>Localtime : </I></b>{weatherDtails.localtime}
+							</div>
+						</lightning-layout-item>
 
-							<lightning-layout-item size="6" padding="around-small">
-								<div><b><I>Last Updated : </I></b>{weatherDtails.last_updated_date}
-								</div>
-							</lightning-layout-item>
-							<lightning-layout-item size="6" padding="around-small">
-								<div><b><I>Temprature ( °C ) : </I></b> {weatherDtails.tempratur_c}</div>
-							</lightning-layout-item>
-							<lightning-layout-item size="6" padding="around-small">
-								<div><b><I>Temprature ( °F )  : </I></b> {weatherDtails.tempratur_f}</div>
-							</lightning-layout-item>
-							<lightning-layout-item size="6" padding="around-small">
-								<div><b><I>Wind Speed ( mi/h ) : </I></b> {weatherDtails.wind_mph}</div>
-							</lightning-layout-item>
-							<lightning-layout-item size="6" padding="around-small">
-								<div><b><I>Wind Speed ( km/h ) : </I></b> {weatherDtails.wind_kph}</div>
-							</lightning-layout-item>
-							<lightning-layout-item size="6" padding="around-small">
-								<div><b><I>Wind Degree : </I></b> {weatherDtails.wind_degree}</div>
-							</lightning-layout-item>
-							<lightning-layout-item size="6" padding="around-small">
-								<div><b><I>Humidity : </I></b> {weatherDtails.humidity}</div>
-							</lightning-layout-item>
+						<lightning-layout-item size="6" padding="around-small">
+							<div><b><I>Last Updated : </I></b>{weatherDtails.last_updated_date}
+							</div>
+						</lightning-layout-item>
+						<lightning-layout-item size="6" padding="around-small">
+							<div><b><I>Temprature ( °C ) : </I></b> {weatherDtails.tempratur_c}</div>
+						</lightning-layout-item>
+						<lightning-layout-item size="6" padding="around-small">
+							<div><b><I>Temprature ( °F )  : </I></b> {weatherDtails.tempratur_f}</div>
+						</lightning-layout-item>
+						<lightning-layout-item size="6" padding="around-small">
+							<div><b><I>Wind Speed ( mi/h ) : </I></b> {weatherDtails.wind_mph}</div>
+						</lightning-layout-item>
+						<lightning-layout-item size="6" padding="around-small">
+							<div><b><I>Wind Speed ( km/h ) : </I></b> {weatherDtails.wind_kph}</div>
+						</lightning-layout-item>
+						<lightning-layout-item size="6" padding="around-small">
+							<div><b><I>Wind Degree : </I></b> {weatherDtails.wind_degree}</div>
+						</lightning-layout-item>
+						<lightning-layout-item size="6" padding="around-small">
+							<div><b><I>Humidity : </I></b> {weatherDtails.humidity}</div>
+						</lightning-layout-item>
 
-						</lightning-layout>
-					</template>
-					<template if:true={weatherDtails.error}>
-						<lightning-layout horizontal-align="spread" multiple-rows>
-							<lightning-layout-item style="color:red; text-align: center;" size="12"
-								spadding="around-small">
-								<div><b><I>Error :</I></b> {weatherDtails.error}
-								</div>
-							</lightning-layout-item>
-						</lightning-layout>
-					</template>
+					</lightning-layout>
 				</template>
+				<template if:true={weatherDtails.error}>
+					<lightning-layout horizontal-align="spread" multiple-rows>
+						<lightning-layout-item style="color:red; text-align: center;" size="12" spadding="around-small">
+							<div><b><I>Error :</I></b> {weatherDtails.error}
+							</div>
+						</lightning-layout-item>
+					</lightning-layout>
+				</template>
+			</template>
 			<!-- </div> -->
 		</div>
 
