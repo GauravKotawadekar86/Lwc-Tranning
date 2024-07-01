@@ -1,7 +1,7 @@
 /**
  * @description       : 
  * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
- * @group             : 
+ * @group             : change from git cmd
  * @last modified on  : 06-26-2024
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
